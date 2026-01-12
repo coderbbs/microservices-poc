@@ -12,8 +12,10 @@ namespace OrderService.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrder()
         {
-            // Intentionally async – order processing is event-driven
-            var order = new Order(Guid.NewGuid());
+            try
+            {
+                // Intentionally async – order processing is event-driven
+                var order = new Order(Guid.NewGuid());
 
             var orderCreatedEvent = new OrderCreatedEvent(
                 order.Id,
@@ -24,7 +26,12 @@ namespace OrderService.Controllers
             await publisher.PublishAsync(orderCreatedEvent);
 
             return Accepted();
-
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message+ "Order creation failed");
+                return StatusCode(500, "Order processing failed");
+            }
         }
     }
 }

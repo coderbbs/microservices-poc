@@ -55,3 +55,21 @@ Domain events would be versioned explicitly to support backward compatibility as
 These improvements would further mature the system from a functional microservices architecture to an operationally robust platform.
 
 If you want, next we can rewrite this to match a specific company’s architectural language, or I can review
+
+## Commands to test OrderService and Inventory Service
+step-1
+docker compose up -d
+
+step-2
+dotnet run --project src/InventoryService
+
+step-3
+dotnet run --project src/OrderService
+
+step-4
+Invoke-WebRequest -Uri https://localhost:7077/orders -Method POST -SkipCertificateCheck
+Invoke-WebRequest -Uri http://localhost:5275/orders -Method POST -UseBasicParsing--working
+
+## RabbitMQ logo RabbitMQ 3.13.7Erlang 26.2.5.16
+http://localhost:15672
+
