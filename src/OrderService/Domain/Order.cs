@@ -7,7 +7,7 @@
         public string Status { get; private set; }
 
         private Order() { }
-
+         
         public Order(Guid id)
         { 
             Id = id;

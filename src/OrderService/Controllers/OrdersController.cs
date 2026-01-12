@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OrderService.Contracts;
 using OrderService.Domain;
+using OrderService.Infrastructure.Messaging;
 
 namespace OrderService.Controllers
 {
@@ -9,17 +10,21 @@ namespace OrderService.Controllers
     public class OrdersController : ControllerBase
     {
         [HttpPost]
-        public IActionResult CreateOrder()
+        public async Task<IActionResult> CreateOrder()
         {
             // Intentionally async – order processing is event-driven
             var order = new Order(Guid.NewGuid());
 
-            var orderCreatedEvent=new OrderCreatedEvent(
+            var orderCreatedEvent = new OrderCreatedEvent(
                 order.Id,
                 order.CreatedAt
-                );
+            );
 
-            return Accepted(orderCreatedEvent);
+            var publisher = new EventPublisher();
+            await publisher.PublishAsync(orderCreatedEvent);
+
+            return Accepted();
+
         }
     }
 }

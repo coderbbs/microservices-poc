@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 18
-VisualStudioVersion = 18.1.11312.151 d18.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36811.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4172B166-C1DD-41C7-892B-6B74511D928E}"
 EndProject
@@ -10,9 +10,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32F48848-322F-4D33-AA10-50E03E5C435E}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		docker-compose.yml = docker-compose.yml
 		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService", "CustomerService", "{71A47802-E13A-4E7C-9928-9FAB1DF47EF3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateway", "ApiGateway", "{25773A70-D2AB-41EC-881B-D69380C60399}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InventoryService", "InventoryService", "{3ADC8C06-C8D9-4951-9DAE-2E11C284C18F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryService", "src\InventoryService\InventoryService.csproj", "{942ED487-76BA-4DE7-BC9B-622A12FD9DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,11 +35,23 @@ Global
 		{F5D6AFB2-2E56-5C19-23C2-7D0AC365D2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5D6AFB2-2E56-5C19-23C2-7D0AC365D2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5D6AFB2-2E56-5C19-23C2-7D0AC365D2F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{942ED487-76BA-4DE7-BC9B-622A12FD9DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{942ED487-76BA-4DE7-BC9B-622A12FD9DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{942ED487-76BA-4DE7-BC9B-622A12FD9DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{942ED487-76BA-4DE7-BC9B-622A12FD9DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F5D6AFB2-2E56-5C19-23C2-7D0AC365D2F9} = {4172B166-C1DD-41C7-892B-6B74511D928E}
+		{F5D6AFB2-2E56-5C19-23C2-7D0AC365D2F9} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {4172B166-C1DD-41C7-892B-6B74511D928E}
+		{71A47802-E13A-4E7C-9928-9FAB1DF47EF3} = {4172B166-C1DD-41C7-892B-6B74511D928E}
+		{25773A70-D2AB-41EC-881B-D69380C60399} = {4172B166-C1DD-41C7-892B-6B74511D928E}
+		{3ADC8C06-C8D9-4951-9DAE-2E11C284C18F} = {4172B166-C1DD-41C7-892B-6B74511D928E}
+		{942ED487-76BA-4DE7-BC9B-622A12FD9DF3} = {3ADC8C06-C8D9-4951-9DAE-2E11C284C18F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FEC8F452-11FD-4286-BDA7-F2EE72AFD210}
 	EndGlobalSection
 EndGlobal
